@@ -12,7 +12,7 @@ import { IngresarComponent } from './ingresar/ingresar.component';
     PeliculasComponent,
     InicioComponent,
     SeriesComponent,
-    IngresarComponent
+    IngresarComponent,
   ],
   imports: [
     CommonModule

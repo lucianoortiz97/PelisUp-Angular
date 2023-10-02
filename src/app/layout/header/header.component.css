@@ -1,6 +1,11 @@
+*{
+    background-color: #121829; 
+    margin: 0;
+    padding: 0;
+}
+
 /* encabezado */
 .header-principal {
-    color: rgb(236, 234, 234); 
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -1,3 +1,9 @@
+*{
+    background-color: #121829; 
+    margin: 0;
+    padding: 0;
+}
+
 .footer {
     color: #fff; 
     padding: 20px; 
