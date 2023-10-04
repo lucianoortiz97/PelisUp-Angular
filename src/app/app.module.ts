@@ -4,12 +4,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { LayoutModule } from "./layout/layout.module";
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { CardsComponent } from './shared/cards/cards.component';
+import { SharedModule } from './shared/shared.module';
+
 
 @NgModule({
     declarations: [
         AppComponent,
-        CardsComponent
+        
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -17,7 +18,9 @@ import { CardsComponent } from './shared/cards/cards.component';
         BrowserModule,
         NgbModule,
         AppRoutingModule,
-        LayoutModule
+        LayoutModule,
+        SharedModule
+        
     ]
 })
 export class AppModule { }

@@ -48,16 +48,16 @@
 
 .titulo {  
     color: #fff; 
-    padding: 10px; 
+    padding: 10px 10px 10px 100px;     /*Arriba, derecha, abajo, izquierda */
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    margin-left: 100px;
 }
 
 h1 {
     margin: 0;
 }
+
 
 .subtitulo {
     color: gray; 

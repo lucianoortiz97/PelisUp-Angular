@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class CardsComponent {
 
+title: string = "Esto es un texto" /* Este texto es el button original */ 
+changeText(){ /*Esta funcion genera un cambio en el texto con "oneclick" */
+  this.title= "Este texto cambio" /* Para llamar un txt se busca con "this" */
+}
 }
