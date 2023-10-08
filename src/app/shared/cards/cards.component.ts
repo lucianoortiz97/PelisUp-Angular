@@ -1,5 +1,12 @@
 import { Component } from '@angular/core';
 
+interface movies_series {
+  name: string, /**Titulo */
+  urlImg: string, /**Img cartelera */
+  point: number, /**Estrellas ranking */
+  description: string, /**Descripcion */
+  category: string, /** Peliculas / series */
+}
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
@@ -7,8 +14,64 @@ import { Component } from '@angular/core';
 })
 export class CardsComponent {
 
-title: string = "Esto es un texto" /* Este texto es el button original */ 
-changeText(){ /*Esta funcion genera un cambio en el texto con "oneclick" */
-  this.title= "Este texto cambio" /* Para llamar un txt se busca con "this" */
-}
+selectedCategory: string = 'all';
+
+arrayInfoCards: movies_series[] = [
+{
+  name:'Shang Chi',
+  urlImg: '../../assets/image/cartelera/Shang-Chi.jpeg' ,
+  point : 7.9,
+  description: '',
+  category: 'peliculas'
+},
+{
+  name: 'Black Widow',
+  urlImg: '../../assets/image/cartelera/Black_Widow.jpg',
+  point: 6.8,
+  description: '',
+  category: 'peliculas'
+},
+{
+  name: 'Loki',
+  urlImg: '../../assets/image/cartelera/Loki.jpg',
+  point: 8.4,
+  description: '',
+  category: 'peliculas'
+},
+{
+  name: 'How I Met Your Mother',
+  urlImg: '../../assets/image/cartelera/How_I_Met_Your_Mother.jpg',
+  point: 8.3,
+  description: '',
+  category: 'series'
+},
+{
+  name: 'Money Heist',
+  urlImg: '../../assets/image/cartelera/money_heist.png',
+  point: 8.3,
+  description: '',
+  category: 'series'
+},
+{
+  name: 'Friends',
+  urlImg: '../../assets/image/cartelera/friends.jpg',
+  point: 8.8,
+  description: '',
+  category: 'series'
+},
+{
+  name: 'The Big Bang Theory',
+  urlImg: '../../assets/image/cartelera/BigBangTheory.jpg',
+  point: 8.1,
+  description: '',
+  category: 'series'
+},
+{
+  name: 'Two And a Half Men',
+  urlImg: '../../assets/image/cartelera/TwoAndMen.jpg',
+  point: 7,
+  description: '',
+  category: 'series'
+},
+]
 }

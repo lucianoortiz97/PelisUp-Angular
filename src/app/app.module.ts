@@ -5,6 +5,7 @@ import { LayoutModule } from "./layout/layout.module";
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { SharedModule } from './shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,8 +20,8 @@ import { SharedModule } from './shared/shared.module';
         NgbModule,
         AppRoutingModule,
         LayoutModule,
-        SharedModule
-        
+        SharedModule,
+        FormsModule,
     ]
 })
 export class AppModule { }

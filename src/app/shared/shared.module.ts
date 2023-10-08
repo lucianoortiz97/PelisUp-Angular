@@ -12,7 +12,7 @@ import { CardsComponent } from './cards/cards.component';
     CommonModule
   ],
   exports: [
-    CardsComponent /*Se */
+    CardsComponent
   ]
 })
 export class SharedModule { }

@@ -9,4 +9,8 @@
  - Incorporación de diferentes componentes
  - Nueva rama "desafio3" 
 
+# Desafio 4
+ - Automatizacion de cards
+ - Se utilizo ngFor e If para recorrer y leer
+ #Sigo reformando el codigo#
  

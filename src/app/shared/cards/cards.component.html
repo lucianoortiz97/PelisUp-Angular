@@ -1,52 +1,26 @@
-<section class="section">
-    <div class="card">
-      <img src="/image/cartelera/Black_Widow.jpg" alt="">
-      <h2>Black Widow</h2>
-      <p>{{title}}</p> 
-       <button (click)="changeText()"> Texto Ejemplo</button>
-    </div>
-  
-    <div class="card">
-      <img src="/image/cartelera/Shang-Chi.jpeg" alt="">
-      <h2>Shang Chi</h2>
-      <p>Descripción de la película 2.</p>
-    </div>
-  
-    <div class="card">
-      <img src="/image/cartelera/Loki.jpg" alt="">
-      <h2>Loki</h2>
-      <p>Descripción de la película 3.</p>
-    </div>
-  
-    <div class="card">
-      <img src="/image/cartelera/How_I_Met_Your_Mother.jpg" alt="">
-      <h2>How I Met Your Mother</h2>
-      <p>Descripc
-    </div>
-  
-    <div class="card">
-      <img src="/image/cartelera/money_heist.png" alt="">
-      <h2>Money Heist</h2>
-      <p>Descripción de la película 5.</p>
-    </div>
-  
-    <div class="card">
-      <img src="/image/cartelera/friends.jpg" alt="">
-      <h2>Friends</h2>
-      <p>Descripción de la película 6.</p>
-    </div>
-  
-    <div class="card">
-      <img src="/image/cartelera/BigBangTheory.jpg" alt="">
-      <h2>The Big Bang Theory</h2>
-      <p>Descripción de la película 7.</p>
-    </div>
-  
-    <div class="card">
-      <img src="/image/cartelera/TwoAndMen.jpg" alt="">
-      <h2>Two And a Half Men</h2>
-      <p>Descripción de la película 8.</p>
-    </div>
+<!-- <div class="buscador">
+  <input class="box-buscador" type="text" placeholder="Buscar peliculas o series">
+</div>
 
-  </section>
+<section class="section">
+    <div class="card" *ngFor=" let card of arrayInfoCards">
+      <p>{{card.point}}</p> 
+      <img src="{{card.urlImg}}" alt="">
+      <h2>{{card.name}}</h2>
+    </div>
+</section> -->
+
+<div class="buscador">
+  <input class="box-buscador" type="text" placeholder="Buscar películas o series">
+</div>
+
+<section class="section">
+  <div class="card" *ngFor="let card of arrayInfoCards">
+    <p>{{card.point}}</p>
+    <img src="{{card.urlImg}}" alt="">
+    <h2>{{card.name}}</h2>
+    <div *ngIf="selectedCategory === 'all' || selectedCategory === card.category">
   
+    </div>
+  </div>
+</section>
