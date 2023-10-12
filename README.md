@@ -12,5 +12,5 @@
 # Desafio 4
  - Automatizacion de cards
  - Se utilizo ngFor e If para recorrer y leer
- #Sigo reformando el codigo#
+ - Fix MenuTab sobre selectedCategory (Todos, Peliculas, Series)
  
