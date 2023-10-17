@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+
+
 interface movies_series {
   name: string;
   urlImg: string;
@@ -14,7 +16,6 @@ interface movies_series {
   styleUrls: ['./cards.component.css']
 })
 export class CardsComponent {
-  selectedCategory: string = 'Todos';
 
   arrayInfoCards: movies_series[] = [
     {
@@ -74,6 +75,10 @@ export class CardsComponent {
       category: 'series'
     }
   ];
+
+  selectedCategory: string = 'todos';
+
+  item: any; 
 
   setSelectedCategory(category: string) {
     this.selectedCategory = category;

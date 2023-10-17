@@ -51,3 +51,41 @@ p{
   color: #FFAD49;
 }
 
+
+/* BOTON SELECTOR PELI, SERIE, TODO*/
+
+.Tab {
+  display: inline-block;
+  background-color: #121829;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+
+.menuTab {
+  list-style: none;
+  padding: 0;
+}
+
+.menuTab li {
+  display: inline;
+  margin-right: 15px; /* Espacio medio entre botones */
+}
+
+.button {
+  background-color: #121829;
+  color: rgba(255, 255, 255, 0.8); 
+  border: 1px solid #000;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, text-decoration 0.3s;
+  padding: 10px 10px 10px 10px;     /*Arriba, derecha, abajo, izquierda */
+  align-items: flex-start;
+  padding-left: 10px;
+  margin-left: 60px;
+}
+
+.button:hover {
+  background-color: #445a8f; /* Color de fondo mas claro en hover */
+  text-decoration: underline; /* Texto subrayado en hover */
+}

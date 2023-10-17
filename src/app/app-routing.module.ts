@@ -7,6 +7,7 @@ import { SeriesComponent } from './routes/series/series.component';
 
 
 const routes: Routes = [
+  { path: "", redirectTo: 'Inicio', pathMatch: 'full' },
   { path: "Inicio", component: InicioComponent },
   { path: "Ingresar", component: IngresarComponent },
   { path: "Peliculas", component: PeliculasComponent },
