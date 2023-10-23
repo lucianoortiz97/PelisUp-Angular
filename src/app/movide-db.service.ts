@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class MovieDBService {
-  private apiKey = '9778527f1e83835b42c4effb5b481c52';
-  private apiUrl = 'https://api.themoviedb.org/3';
+  private apiKey = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5Nzc4NTI3ZjFlODM4MzViNDJjNGVmZmI1YjQ4MWM1MiIsInN1YiI6IjY1MmQ1OThmMzlhMWE2MDEwMDI5OWZjYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.dbYia4gDtP2c7xD4REO_NB7Cp0zaWi2uDpxCRfoQm1c';
+  private apiUrl = 'https://api.themoviedb.org/3/trending/all';
 
   constructor(private http: HttpClient) {}
 
