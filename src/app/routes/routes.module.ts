@@ -4,18 +4,24 @@ import { PeliculasComponent } from './peliculas/peliculas.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { SeriesComponent } from './series/series.component';
 import { IngresarComponent } from './ingresar/ingresar.component';
+import { HeaderComponent } from '../layout/header/header.component';
+import { FooterComponent } from '../layout/footer/footer.component';
+import { SharedModule } from "../shared/shared.module";
 
 
 
 @NgModule({
-  declarations: [
-    PeliculasComponent,
-    InicioComponent,
-    SeriesComponent,
-    IngresarComponent,
-  ],
-  imports: [
-    CommonModule
-  ]
+    declarations: [
+        PeliculasComponent,
+        InicioComponent,
+        SeriesComponent,
+        IngresarComponent,
+        HeaderComponent,
+        FooterComponent,
+    ],
+    imports: [
+        CommonModule,
+        SharedModule
+    ]
 })
 export class RoutesModule { }

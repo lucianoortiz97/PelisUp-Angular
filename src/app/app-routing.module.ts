@@ -1,18 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { InicioComponent } from './routes/inicio/inicio.component';
-import { IngresarComponent } from './routes/ingresar/ingresar.component';
-import { PeliculasComponent } from './routes/peliculas/peliculas.component';
-import { SeriesComponent } from './routes/series/series.component';
-
+import { HomeComponent } from './components/routes/home/home.component';
 
 const routes: Routes = [
-  { path: "", redirectTo: 'Inicio', pathMatch: 'full' },
-  { path: "Inicio", component: InicioComponent },
-  { path: "Ingresar", component: IngresarComponent },
-  { path: "Peliculas", component: PeliculasComponent },
-  { path: "Series", component: SeriesComponent },
-
+  {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({

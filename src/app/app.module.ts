@@ -1,27 +1,29 @@
-import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AppRoutingModule } from './app-routing.module';
-import { LayoutModule } from "./layout/layout.module";
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { SharedModule } from './shared/shared.module';
-import { FormsModule } from '@angular/forms';
-
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { AppComponent } from './app.component';
+import { LayoutModule } from './components/layout/layout.module';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from './components/shared/shared.module';
+import { RoutesModule } from './components/routes/routes.module';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        
-    ],
-    providers: [],
-    bootstrap: [AppComponent],
-    imports: [
-        BrowserModule,
-        NgbModule,
-        AppRoutingModule,
-        LayoutModule,
-        SharedModule,
-        FormsModule,
-    ]
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    LayoutModule,
+    RouterModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    RoutesModule,
+    SharedModule,
+    HttpClientModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

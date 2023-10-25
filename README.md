@@ -20,4 +20,8 @@ Todo el progreso de la web esta dividido en las diferentes ramas</p>
  - Fix MenuTab sobre selectedCategory (Todos, Peliculas, Series)
  
 # Desafio 5
+ - Contenido real de una API externa
+
+# Desafio 6
+
 
