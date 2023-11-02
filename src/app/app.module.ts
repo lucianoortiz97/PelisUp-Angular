@@ -1,29 +1,27 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutModule } from './components/layout/layout.module';
-import { RouterModule } from '@angular/router';
-import { AppRoutingModule } from './app-routing.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SharedModule } from './components/shared/shared.module';
 import { RoutesModule } from './components/routes/routes.module';
+import { SharedModule } from './components/shared/shared.module';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    LayoutModule,
-    RouterModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
+    LayoutModule,
     RoutesModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase), /// MODIFICAR
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

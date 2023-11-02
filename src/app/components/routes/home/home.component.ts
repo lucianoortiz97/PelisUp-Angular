@@ -1,72 +1,81 @@
-import { Component, OnInit } from '@angular/core';
-import { IMovie } from 'src/app/models/trending.model';
-import { MoviesService } from 'src/app/services/movies.service';
+import { Component } from '@angular/core';
+import { Movie, ResponseData } from 'src/app/services/movies/movie';
+import { MoviesService } from 'src/app/services/movies/movies.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
+  moviesList: Movie[] = [];
+  movieResult: Movie[] = [];
+  filter: string = '';
+  toSearch: string = '';
+  textFilter: string = 'Todos';
 
-  isLoading: boolean = true //variable que manipula la aparición del spinner en momentos de carga
-  listFilms: IMovie[] = [] //variable la cuál usaremos para manipular la data según las acciones del usuario
-  listOriginalFilms: IMovie[] = [] //variable para servir de soporte/auxiliar al manipular la data según las acciones del usuario
+  constructor(private _moviesService: MoviesService) {}
 
-  optionsTab: any[] = [ //variable creada para proporcionar estructura al componente tab
-    {
-      label: 'Todos',
-      value: 'all',
-    },
-    {
-      label: 'Peliculas',
-      value: 'movie',
-    },
-    {
-      label: 'Series',
-      value: 'tv',
-    },
-  ]
-
-  tabValue: any = {
-    label: 'Todos',
-    value: 'all'
+  ngOnInit(): void {
+    this.getAll();
   }
 
-  constructor(private movieService: MoviesService ) { //declaración del servicio usado
-
-  }
-
-  ngOnInit(): void { //ngOnInit se ejecuta cuando el componente carga por primera vez (investigar ciclo de vida de componentes de Angular)
-    this.getTrending()
-  }
-
-  getTrending() { //función que logra guardar la data necesaria por medio de la conexión al servicio
-    this.movieService.getTrending().subscribe({
-      next: (response) => {
-        this.listFilms = response.results
-        this.listOriginalFilms = response.results
+  public getAll() {
+    this.textFilter = 'Todos';
+    this.filter = '';
+    this._moviesService.getAll().subscribe({
+      next: (response: ResponseData) => {
+        this.movieResult = this.moviesList = response?.results || [];
       },
-      complete: () => {
-        this.isLoading = false
-      }
-    })
+      error: (err) => {
+        console.error('Error -> getAll: ', err);
+      },
+      complete() {
+        console.log('Listo');
+      },
+    });
   }
 
-  getTabSelected(value: any) { //guarda el nuevo tab elegido y filtra con respecto al valor
-    this.tabValue = value 
-    this.filterFilms(this.tabValue.value)
+  public getMovies() {
+    this.textFilter = 'Películas';
+    this.filter = 'movie';
+    this._moviesService.getMovies().subscribe({
+      next: (response: ResponseData) => {
+        this.movieResult = this.moviesList = response?.results || [];
+      },
+      error: (err) => {
+        console.error('Error -> getMovies: ', err);
+      },
+      complete() {
+        console.log('Listo');
+      },
+    });
   }
 
-  searchFilm(value: string) { //realiza una búsqueda de acuerdo al valor devuelto por el componente search
-    if (!value.length) return this.filterFilms(this.tabValue.value)
-    return this.listFilms = this.listFilms.filter((item: IMovie) => item.title ? item.title.toLowerCase().match(value.toLocaleLowerCase()) : item.name?.toLowerCase().match(value.toLocaleLowerCase()))
+  public getSeries() {
+    this.textFilter = 'Series';
+    this.filter = 'tv';
+    this._moviesService.getSeries().subscribe({
+      next: (response: ResponseData) => {
+        this.movieResult = this.moviesList = response?.results || [];
+      },
+      error: (err) => {
+        console.error('Error -> getSeries: ', err);
+      },
+      complete() {
+        console.log('Listo');
+      },
+    });
   }
 
-  filterFilms(value: string) { //filtra la data principal de acuerdo al tab elegido
-    if (value === 'all') return this.listFilms = this.listOriginalFilms
-    else {
-      return this.listFilms = this.listOriginalFilms.filter((item: IMovie) => item.media_type === value)
-    }
+  search(text: string) {
+    console.log(text);
+    this.movieResult = [];
+    if (text.length) {
+      this.moviesList.forEach((data) => {
+        if (data.title?.toLowerCase().includes(text.toLowerCase()))
+          this.movieResult.push(data);
+      });
+    } else this.movieResult = this.moviesList;
   }
 }

@@ -1,0 +1,33 @@
+<section class="login">
+    <div class="login-container-img">
+      <img class="login-img" src="assets/img/img-login.svg" />
+    </div>
+    <div class="login-container">
+      <h1 class="title">Ingresar</h1>
+      <form (ngSubmit)="sendUser()" autocomplete="off" [formGroup]="formUser">
+        <input
+          class="search"
+          type="email"
+          formControlName="email"
+          placeholder="&#xf0e0; Email"
+        />
+        <span class="form-text text-danger" *ngIf="validForm('email')">
+          El formato de correo no es valido.
+        </span>
+        <input
+          class="search"
+          type="password"
+          formControlName="password"
+          placeholder="&#xf084; Contraseña"
+        />
+        <span class="form-text text-danger" *ngIf="validForm('password')">
+          Debe ser mayor a 6 digitos.
+        </span>
+        <p class="text-login">
+          ¿No tienes cuenta? <a routerLink="../register">Registrar</a>
+        </p>
+        <button class="item-tab" type="submit">Ingresar</button>
+      </form>
+    </div>
+  </section>
+  

@@ -1,19 +1,15 @@
-import { Component, Input } from '@angular/core';
-import { IMovie } from 'src/app/models/trending.model';
-
-@Component({
-  selector: 'app-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
-})
-export class CardComponent {
-
-  @Input() dataOfMovie: IMovie = {} as IMovie //decorador que nos permite recibir información del componente 'padre'
-
-  constructor() {
-
-  }
-
-  
-
-}
+<div class="d-flex justify-content-center flex-wrap mb-6">
+  <div class="cards col-md-3 col-12" *ngFor="let item of data">
+    <div class="star d-flex justify-content-center align-items-center">
+      <i class="far fa-star me-1"></i>{{ item.vote_average.toFixed(1) }}
+    </div>
+    <img
+      class="portada"
+      src="https://image.tmdb.org/t/p/w500/{{ item.poster_path }}"
+      alt="protada"
+    />
+    <p class="title-card link-regular">
+      {{ item.name || item.title }}
+    </p>
+  </div>
+</div>
