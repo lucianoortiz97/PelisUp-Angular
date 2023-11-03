@@ -23,5 +23,6 @@ Todo el progreso de la web esta dividido en las diferentes ramas</p>
  - Contenido real de una API externa
 
 # Desafio 6
+ - Modificando 
 
 
