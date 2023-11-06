@@ -6,7 +6,7 @@
     <img
       class="portada"
       src="https://image.tmdb.org/t/p/w500/{{ item.poster_path }}"
-      alt="protada"
+      alt="portada"
     />
     <p class="title-card link-regular">
       {{ item.name || item.title }}

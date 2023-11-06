@@ -1,10 +1,9 @@
-export const environment = {
-    firebase: {
-      projectId: 'curso-angular-8f646',
-      appId: '1:202009637944:web:59348f4ab8eee4e55222cd',
-      storageBucket: 'curso-angular-8f646.appspot.com',
-      apiKey: 'AIzaSyA77nK2EWG30YWHHqiBaloTKwvnPMaHU1A',
-      authDomain: 'curso-angular-8f646.firebaseapp.com',
-      messagingSenderId: '202009637944',
-    },
-  };
+export const firebaseConfig = {
+  apiKey: "AIzaSyCxKxWINIaEOqKEyrJpFXIMGwzBLW9FgtY",
+  authDomain: "pelisapp-15d74.firebaseapp.com",
+  projectId: "pelisapp-15d74",
+  storageBucket: "pelisapp-15d74.appspot.com",
+  messagingSenderId: "240063356740",
+  appId: "1:240063356740:web:882488ae125ff1f1080111",
+  measurementId: "G-1F1KHWEHB9"
+};
