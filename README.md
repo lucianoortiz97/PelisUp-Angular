@@ -25,4 +25,6 @@ Todo el progreso de la web esta dividido en las diferentes ramas</p>
 # Desafio 6
  - Modificando 
 
+ (Todos los archivos ya se encuentran en el main)
+
 
